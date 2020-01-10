@@ -18,16 +18,27 @@ class order {
         console.log("End");
         return summary;
     }
+
+    deliver = async () => {
+        await sleep(1000);
+        this.delivered = true;
+    }
 }
 
 let order_obj = new order(1237, "Second order");
 
 console.log("AAA");
 
-console.log(order_obj.summarize());
+//console.log(order_obj.summarize());
 
 const order_summary = order_obj.summarize().then((order_summary) => {
     console.log(order_summary);
 });
 
 console.log("BBB");
+
+order_obj.deliver();
+
+const order_summary2 = order_obj.summarize().then((order_summary2) => {
+    console.log(order_summary2);
+});
