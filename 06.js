@@ -11,6 +11,8 @@ class order {
 
     summarize = async () => {
         console.log("Start");
+
+        // Simulate database delay or heavy calculation
         await sleep(2000);
         const summary = "order id: " + this.id + ", message: " + this.message + ", delivered: " + this.delivered;
         console.log("End");
@@ -21,6 +23,8 @@ class order {
 let order_obj = new order(1237, "Second order");
 
 console.log("AAA");
+
+console.log(order_obj.summarize());
 
 const order_summary = order_obj.summarize().then((order_summary) => {
     console.log(order_summary);
