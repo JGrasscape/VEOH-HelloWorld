@@ -17,6 +17,7 @@ class worker {
         else {
             console.log("Ei ruokaa!");
         }
+        return; // Promise<void>
     }
 }
 
